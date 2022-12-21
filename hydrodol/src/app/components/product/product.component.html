@@ -1,0 +1,44 @@
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="item">
+          <a (click)="filter('')">
+              <img src="https://cdn.shopify.com/s/files/1/0253/4644/1270/products/2020_Nov_Hydrodol_PACKAGING_30_3_v1_current_864x864.jpg?v=1605832383" alt="">
+              <h6>All products</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('electronics')">
+              <img src="https://cdn.shopify.com/s/files/1/0253/4644/1270/products/HydrodolLiver_Front_864x864.jpg?v=1605831203" alt="">
+              <h6>Pill</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('fashion')">
+              <img src="https://cdn.shopify.com/s/files/1/0253/4644/1270/products/HydrodolBefore_After12_Front_864x864.jpg?v=16055058803" alt="">
+              <h6>Powder before meal</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('jewelery')">
+              <img style="width: 62px; margin-top: 5px;" src="https://cdn.shopify.com/s/files/1/0253/4644/1270/products/BIOREVIVEecom_noclaim_864x864.jpg?v=1595987648" alt="">
+              <h6>liver health</h6>
+          </a>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+          <div class="card col-md-3">
+              <img src="{{item.image}}" alt="">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <p><strong>Price:</strong> ${{item.price}}</p>
+              <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+          </div>
+      </ng-container>
+
+  </div>
+</div>
+
