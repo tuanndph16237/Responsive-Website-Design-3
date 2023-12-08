@@ -1,0 +1,10 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "blog title",
+      "author": "author name",
+      "content": "this is a blog content"
+    }
+  ]
+}
